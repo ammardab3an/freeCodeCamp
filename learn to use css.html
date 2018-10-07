@@ -1,0 +1,290 @@
+<howToUseCSS>
+    how to use css to color an item
+    <someItem style="color: red;">sometext</someItem>
+    
+    another way:
+    <style>
+        someItem {color: red;}
+    </style>
+
+    or you can but it in a class so you can use it as many times you want:
+    <style>
+        .red-text {
+            color: red;
+        }
+
+        or:
+        p {
+            color: red;
+        }
+`   </style>
+    <someItem class='red-text'>sometext</someItem>
+    <p>sometext</p>
+
+    or you can use ids: 
+    <style> #the-first-id { color: red; } </style>
+    <h2 id='the-first-id'></h2>
+</howToUseCSS>
+
+
+<style>
+    colorAnItem {
+        color: red;
+    }
+    /* to import a google font :
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    */
+    changeTheFont {
+        font-size: 30px;
+        font-family: mainfont(case sensitive), fallbackFont(Generic_font is not case sensitive);
+        font-weight: 500;
+        line-height: 25px;
+    }
+    .text-transform{
+        text-transform: lowercase;/*transform me*/
+        text-transform: uppercase;/*TRANSFORM ME*/
+        text-transform: capitalize;/*Transform Me*/
+        text-transform: initial;/*Use the default value*/
+        text-transform: inherit;/* Use the text-transform value from the parent element*/
+        text-transform: none;/*(Default): Use the original text*/
+    }
+
+    sizeYourImages{
+        width: 500px;
+    }
+    .thin-red-border {
+        border-color: red;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        /* border-radius: 50%; */
+    }
+    /* class='firstClass secordClass ....' */
+    .silver-background{
+        background-color: silver;
+    }
+</style>
+
+
+you may have already noticed this,
+but all HTML elements are essentially 
+little rectangles.
+
+to control the space that surrounds each element:
+padding, margin and border
+
+<Padding>
+    an element's padding controls the amount of space between the element's conent and its border.
+    <style>
+        .blue-box{background-color: blue; padding: 20px;} 
+        /*CSS allows you to control the padding of all four individual sides of an element 
+        with the padding-top, padding-right, padding-bottom, and padding-left properties.*/
+        .red-box {
+            background-color: crimson;
+            padding-top: 40px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+        } 
+        .green-box {
+            background-color: gren;
+            padding: top right bottom left;
+        }
+    </style>
+</Padding>
+
+<Margin>
+    An element's margin controls the amount of space between an element's border and surrounding elements.
+    <style> 
+        .blue-box{background-color: blue; margin: 20px;}
+        /*margin can be negative number.*/
+        .red-box {
+            background-color: crimson;
+            margin-top: 40px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+        .green-box {
+            background-color: gren;
+            margin: top right bottom left;
+        }
+    </style>
+</Margin>
+
+<!--
+    you can use this way to select every checkboxs as an example:
+-->
+<style>
+    [type='checkbox'] {
+        background-color: red;
+    }
+</style>
+
+<!--
+    to access to the whole body for an exapmle:
+-->
+<style>
+    body{
+        background-color: black;
+    }
+</style>
+
+<!-- 
+    Overriding
+-->
+
+<style>
+    body {
+        background-color: black;
+        font-family: monospace;
+        color: green;
+    }
+    .pink-text {
+        color: pink;
+    }
+    .blue-text {
+        color: blue;
+    }
+    #orange-text {
+        color: orange; 
+    }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white;">Hello World!</h1>
+
+
+<!--
+    '!important' ex: 'color: pink !important;'
+    inline style (style='color: white;')
+    id class (orange-text)
+    first class by order in style section (pink-text)
+    last class (blue-text)
+    body class
+
+    ps: the order of classes in (class='class class ...') is not important
+-->
+
+<style>
+/* 0 -> F */
+/* The digit 0 is the lowest numebr in hex code */
+/* and the digit F is the highest numeber in hex code */
+/* red green blue */
+/* rgb(red,green,blue) */
+/* 0 to 255 */
+/* rgba(red,green,blue,alpha/ level of opacity) */
+/* alpha: 0 -> 1 */
+
+.colors {
+    color: black;
+    color: white;
+    color: #000000;
+    color: #FFFFFF;
+    color: #000;
+    color: #FFF;
+    color: rgb(0,0,0);
+    color: rgb(255,255,255);
+    color: rgba(255,255,255,0.5);
+
+}
+</style>
+
+<!--
+    CSS Variables:
+-->
+
+<style>
+    .class {
+        --black-color: black;
+        --white-color: white;
+    }
+    .using-variable {
+        background: var(--black-color);
+        background: var(--black-color, black);
+    }
+</style>
+
+<!--
+    to improve browser compatibility:
+-->
+<style>
+    :root {
+      --red-color: red;
+    }
+    .red-box {
+      background: red;    
+      background: var(--red-color);
+    }
+</style>
+<div class="red-box"></div>
+
+<!-- 
+    you can over-write variables by setting them again within a specific element:
+-->
+
+<style>
+    :root {
+      --red-color: red;
+    }
+    .red-box {
+      --red-color: rgb(214, 51, 51);
+      background: var(--red-color);
+    }
+</style>
+
+<!--
+    Text Align:
+    justify:
+        causes all lines of text except the last line to meet the left and right edges of the line box.
+    center:
+        centers the text.
+    right:
+        right-aligns the text.
+    left:(the default)
+        left-aligns the text. 
+-->
+
+<!--
+    you can specify the width, height of any element uning the (width, height) property.
+    to a make text bold:
+        font-weight: bold;
+        or:    
+        <strong>some text</strong>
+    to underline a text:
+        font-decoration: underline;
+        or:    
+        <u>some text</u>
+    to emphasiza a text:
+        font-style: italic;
+        or:    
+        <em>some text</em>
+    to strikethrough text:
+        text-decoration: line-through;
+        or:
+        <s>some text</s>
+    to add a horizontal line:
+        <hr>
+        hr is is a self-closing tag.
+-->
+
+
+<!--
+    Box Shadow:
+        box-shadow: (ffset-x) (offset-y) (blur-radius) (spread-raduis) (color);
+        
+        offset-x: how far to push the shadow horizontally from the element
+        offset-y: how far to push the shadow vertically from the element
+
+        The blur-radius and spread-radius values are optional.
+
+        ex:
+            https://www.w3schools.com/cssref/playit.asp?filename=playcss_box-shadow&preval=20px%2020px%2010px%20grey
+-->
+
+<!--
+    The (opacity) property in CSS is used to adjust the opacity, or conversely, the transparency for an item.
+    0 -> 1
+    A value of 1 is opaque, which isn't transparent at all.
+    A value of 0.5 is half see-through.
+    A value of 0 is completely transparent.
+-->
+
