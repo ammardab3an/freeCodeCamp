@@ -292,7 +292,7 @@ padding, margin and border
 -->
 <div style="background-color: white; padding: 10px; "><img src="https://i.imgur.com/eWWi3gZ.gif" ></div>
 <style>
-    p {
+    #id {
         position: relative;
         top: 00px;
         right: 00px;
@@ -302,4 +302,27 @@ padding, margin and border
 </style>
 
 
+<!--
+    lock an item
+ -->
+<style>
+    #id {
+        position: absolute;
+        top: 50px;
+        right: 50px;       
+    }
+</style>
 
+<!--
+    fixed position(is type of absolute positioning)
+        The difference between the fixed and absolute positions is that an element with a fixed position won't move when the user scrolls.
+-->
+<style>
+    #navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        background-color: #767676;
+    }
+</style>
