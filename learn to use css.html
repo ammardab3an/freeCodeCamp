@@ -1,36 +1,23 @@
-<howToUseCSS>
-    how to use css to color an item
-    <someItem style="color: red;">sometext</someItem>
-    
-    another way:
-    <style>
-        someItem {color: red;}
-    </style>
+<colorAnItem>
+<p style="color: red;">sometext</p>
 
-    or you can but it in a class so you can use it as many times you want:
-    <style>
-        .red-text {
-            color: red;
-        }
+<!-- or you can but it in a class so you can use it as many times you want: -->
+<style>
+    .red-text { color: red; }
+    /*another way:*/
+    h1 {color: red;}
+</style>
 
-        or:
-        p {
-            color: red;
-        }
-`   </style>
-    <someItem class='red-text'>sometext</someItem>
-    <p>sometext</p>
+<p class='red-text'>sometext</p>
+<p>sometext</p>
 
-    or you can use ids: 
-    <style> #the-first-id { color: red; } </style>
-    <h2 id='the-first-id'></h2>
-</howToUseCSS>
-
+<!-- or you can use ids:  -->
+<style> #the-first-id { color: red; } </style>
+<p id='the-first-id'>sometext</p>
+</colorAnItem>
 
 <style>
-    colorAnItem {
-        color: red;
-    }
+
     /* to import a google font :
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     */
@@ -65,16 +52,16 @@
     }
 </style>
 
-
+<!--
 you may have already noticed this,
 but all HTML elements are essentially 
 little rectangles.
 
 to control the space that surrounds each element:
 padding, margin and border
-
+-->
 <Padding>
-    an element's padding controls the amount of space between the element's conent and its border.
+    <!-- an element's padding controls the amount of space between the element's conent and its border. -->
     <style>
         .blue-box{background-color: blue; padding: 20px;} 
         /*CSS allows you to control the padding of all four individual sides of an element 
@@ -94,7 +81,7 @@ padding, margin and border
 </Padding>
 
 <Margin>
-    An element's margin controls the amount of space between an element's border and surrounding elements.
+    <!-- An element's margin controls the amount of space between an element's border and surrounding elements. -->
     <style> 
         .blue-box{background-color: blue; margin: 20px;}
         /*margin can be negative number.*/
@@ -136,7 +123,7 @@ padding, margin and border
 
 <style>
     body {
-        background-color: black;
+        background-color: rgb(6, 39, 1);
         font-family: monospace;
         color: green;
     }
@@ -161,7 +148,7 @@ padding, margin and border
     last class (blue-text)
     body class
 
-    ps: the order of classes in (class='class class ...') is not important
+    ps: the order of classes in (class='class00 class01 ...') is not important
 -->
 
 <style>
@@ -191,7 +178,6 @@ padding, margin and border
 <!--
     CSS Variables:
 -->
-
 <style>
     .class {
         --black-color: black;
@@ -287,4 +273,33 @@ padding, margin and border
     A value of 0.5 is half see-through.
     A value of 0 is completely transparent.
 -->
+
+
+<!--
+    hover
+-->
+<style>
+    a {
+    color: #000;
+    }
+    a:hover{
+    color: blue;
+    }
+</style>
+
+<!--
+    relative position
+-->
+<div style="background-color: white; padding: 10px; "><img src="https://i.imgur.com/eWWi3gZ.gif" ></div>
+<style>
+    p {
+        position: relative;
+        top: 00px;
+        right: 00px;
+        bottom: 00px;
+        left: 00px;
+    }
+</style>
+
+
 
