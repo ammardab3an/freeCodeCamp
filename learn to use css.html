@@ -1,19 +1,19 @@
 <colorAnItem>
-<p style="color: red;">sometext</p>
+    <p style="color: blue;">sometext</p>
 
-<!-- or you can but it in a class so you can use it as many times you want: -->
-<style>
-    .red-text { color: red; }
-    /*another way:*/
-    h1 {color: red;}
-</style>
+    <!-- or you can but it in a class so you can use it as many times you want: -->
+    <style>
+        .red-text { color: blue; }
+        /*another way:*/
+        #red-text {color: blue;}
+    </style>
 
-<p class='red-text'>sometext</p>
-<p>sometext</p>
+    <p class='red-text'>sometext</p>
+    <p>sometext</p>
 
-<!-- or you can use ids:  -->
-<style> #the-first-id { color: red; } </style>
-<p id='the-first-id'>sometext</p>
+    <!-- or you can use ids:  -->
+    <style> #the-first-id { color: blue; } </style>
+    <p id='the-first-id'>sometext</p>
 </colorAnItem>
 
 <style>
@@ -63,17 +63,17 @@ padding, margin and border
 <Padding>
     <!-- an element's padding controls the amount of space between the element's conent and its border. -->
     <style>
-        .blue-box{background-color: blue; padding: 20px;} 
+        .blue-box-padding {background-color: blue; padding: 20px;} 
         /*CSS allows you to control the padding of all four individual sides of an element 
         with the padding-top, padding-right, padding-bottom, and padding-left properties.*/
-        .red-box {
+        .red-box-padding {
             background-color: crimson;
             padding-top: 40px;
             padding-right: 20px;
             padding-bottom: 20px;
             padding-left: 40px;
         } 
-        .green-box {
+        .green-box-padding {
             background-color: gren;
             padding: top right bottom left;
         }
@@ -83,16 +83,16 @@ padding, margin and border
 <Margin>
     <!-- An element's margin controls the amount of space between an element's border and surrounding elements. -->
     <style> 
-        .blue-box{background-color: blue; margin: 20px;}
+        .blue-box-margin {background-color: blue; margin: 20px;}
         /*margin can be negative number.*/
-        .red-box {
+        .red-box-margin {
             background-color: crimson;
             margin-top: 40px;
             margin-right: 20px;
             margin-bottom: 20px;
             margin-left: 40px;
         }
-        .green-box {
+        .green-box-margin {
             background-color: gren;
             margin: top right bottom left;
         }
@@ -113,7 +113,7 @@ padding, margin and border
 -->
 <style>
     body{
-        background-color: black;
+        
     }
 </style>
 
@@ -123,9 +123,8 @@ padding, margin and border
 
 <style>
     body {
-        background-color: rgb(6, 39, 1);
         font-family: monospace;
-        color: green;
+        color: black;
     }
     .pink-text {
         color: pink;
@@ -137,7 +136,7 @@ padding, margin and border
         color: orange; 
     }
 </style>
-<h1 id="orange-text" class="pink-text blue-text" style="color: white;">Hello World!</h1>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white;">Hello World! (Overriding example)</h1>
 
 
 <!--
@@ -290,7 +289,7 @@ padding, margin and border
 <!--
     relative position
 -->
-<div style="background-color: white; padding: 10px; "><img src="https://i.imgur.com/eWWi3gZ.gif" ></div>
+<img src="https://i.imgur.com/eWWi3gZ.gif" style="margin: 50px auto; display: block;">
 <style>
     #id {
         position: relative;
@@ -441,16 +440,20 @@ padding, margin and border
     linear-gradient
 -->
 <style>
-
-    div{ 
+    div{
+        height: 40px;
+        width: 70%;
+        margin: 50px auto;
+    }
+    #linear{ 
       background: linear-gradient(35deg, #CCFFFF,#FFCCCC);
     }
   
 </style>
-
+<div id="linear"></div>
 <style>
 
-    div{ 
+    #linear-repeated{ 
       background: repeating-linear-gradient(
         45deg,
         yellow 0px,
@@ -461,7 +464,7 @@ padding, margin and border
     }
   
   </style>
-
+<div id="linear-repeated"></div>
 <!--
     background as a reapeated image 
 -->
@@ -504,12 +507,7 @@ padding, margin and border
 -->
 <style>
     .heart {
-        position: absolute;
-        margin: auto;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+
         background-color: pink;
         height: 50px;
         width: 50px;
@@ -537,4 +535,67 @@ padding, margin and border
     }
 </style>
 <div class = "heart" ></div>
+
+<!--
+    animation
+-->
+
+<!-- blue to yellow example -->
+
+<style>
+    #rect {
+      height: 40px;
+      width: 70%;
+      background: black;
+      margin: 50px auto;
+      border-radius: 5px;
+      animation-name: rainbow;
+      animation-duration: 4s;
+    }
+    @keyframes rainbow {
+      0% {
+        background-color: blue;
+      }
+      100% {
+        background-color: yellow;
+      }
+    }
+</style>
+<div id="rect"></div>
+
+<!-- animation + hover -->
+
+<style>
+    #bu {
+      border-radius: 5px;
+      color: white;
+      background-color: #0F5897;
+      padding: 5px 10px 8px 10px;
+      width: 70%;
+      margin: 50px auto;
+      display: block;
+    }
+    
+    #bu:hover {
+      animation-name: background-color;
+    /* add your code below this line */
+    animation-fill-mode: forwards;
+    /* add your code above this line */
+      animation-duration: 500ms;
+    }
+    @keyframes background-color {
+      100% {
+        background-color: #4791d0; 
+      }
+    }
+    
+  </style>
+    
+  <button id="bu">Register</button>
+
+  <!--
+      to put element to the middel:
+        margin: 50px auto;
+        display: block;
+  -->
 
