@@ -599,3 +599,37 @@ padding, margin and border
         display: block;
   -->
 
+<!-- animation: moving -->
+<style>
+  
+  #rectWithMoving {
+    background-color: black;
+    position: relative;  
+    animation-name: _rainbow;
+    animation-duration: 4s;
+  }
+  
+  @keyframes _rainbow {
+    0% {
+      background-color: blue;
+      top: 0px;
+      left: 0px;
+      
+    }
+    50% {
+      background-color: green;
+      top: 50px;
+      left: 25px;
+    }
+    100% {
+      background-color: yellow;
+      top: 0px;
+      left: -25px; 
+    }
+  }
+  </style>
+  
+  <div id="rectWithMoving"></div>
+
+
+  
